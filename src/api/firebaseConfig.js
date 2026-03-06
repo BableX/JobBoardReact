@@ -1,5 +1,6 @@
+// БИРИНЧИ ЖОЛ: Бардык импортторду туура жазыңыз
 import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore"; 
+import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyD6Ylv7elTI6FLN5j2xqzAPWQ_-7Su7dWY",
@@ -11,8 +12,12 @@ const firebaseConfig = {
   measurementId: "G-T8MFSHT3HH"
 };
 
-
+// Firebase инициализациялоо
 const app = initializeApp(firebaseConfig);
 
-
+// Firestore туташуу
 export const db = getFirestore(app);
+
+// Текшерүү үчүн консолго чыгаруу
+console.log("Firebase инициализацияланды:", app.name);
+console.log("Firestore туташты:", db ? "Ийгиликтүү" : "Ката");
