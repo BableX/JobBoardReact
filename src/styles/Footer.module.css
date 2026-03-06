@@ -1,0 +1,211 @@
+.footerRoot {
+  width: 100vw;
+  margin-top: 40px;
+  margin-right: calc(50% - 50vw);
+  margin-left: calc(50% - 50vw);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.partnerBar {
+  background: #dbdbdb;
+}
+
+.partnerLogos {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 22px 32px;
+}
+
+.partnerLogoText {
+  margin: 0;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.partnerLogoText span {
+  margin-left: 1px;
+  font-size: 0.58em;
+  font-weight: 600;
+  text-transform: lowercase;
+}
+
+.partnerLogoIroko {
+  color: #db2a64;
+  font-size: clamp(1.75rem, 2.3vw, 2.1rem);
+}
+
+.partnerLogoLendsqr {
+  color: #2f4f88;
+  font-size: clamp(1.75rem, 2.2vw, 2.05rem);
+  font-weight: 600;
+  text-transform: lowercase;
+}
+
+.partnerLogoInterswitch {
+  color: #0f578e;
+  font-size: clamp(1.65rem, 2.1vw, 2rem);
+  font-weight: 700;
+}
+
+.partnerLogoKuda {
+  color: #5b3f87;
+  font-size: clamp(1.7rem, 2.1vw, 2rem);
+  text-transform: lowercase;
+}
+
+.partnerLogoGloopro {
+  color: #4d9749;
+  font-size: clamp(1.7rem, 2.1vw, 2rem);
+  font-weight: 600;
+}
+
+.footerContent {
+  position: relative;
+  background: #06090f;
+  color: #f0f2f8;
+}
+
+.decorativePlane {
+  position: absolute;
+  top: 56px;
+  right: 12%;
+  width: 82px;
+  height: 82px;
+  color: #5d636d;
+  stroke-width: 1.2;
+  transform: rotate(17deg);
+}
+
+.linkColumns {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(110px, 1fr));
+  gap: 44px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 54px 32px 42px;
+}
+
+.linkColumn {
+  min-width: 0;
+}
+
+.linkColumnTitle {
+  margin: 0 0 17px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #e7ebf2;
+}
+
+.linkList {
+  display: grid;
+  gap: 11px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.linkItem {
+  color: #a1a8b4;
+  font-size: 12px;
+  line-height: 1.3;
+}
+
+.footerBottom {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 16px 32px 20px;
+  border-top: 1px solid #323741;
+}
+
+.footerBrand {
+  margin: 0;
+  color: #edf2f8;
+  font-size: 23px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+}
+
+.footerCopyright {
+  margin: 0;
+  text-align: center;
+  color: #8f97a3;
+  font-size: 11px;
+}
+
+.socialLinks {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.socialLinkIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border: 1px solid #3f444f;
+  border-radius: 50%;
+  color: #838994;
+}
+
+@media (max-width: 1024px) {
+  .partnerLogos {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px 24px;
+  }
+
+  .decorativePlane {
+    right: 6%;
+    width: 68px;
+    height: 68px;
+  }
+
+  .linkColumns {
+    grid-template-columns: repeat(2, minmax(150px, 1fr));
+    gap: 34px 48px;
+    padding: 44px 24px 34px;
+  }
+
+  .footerBottom {
+    padding: 16px 24px 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .footerRoot {
+    margin-top: 28px;
+  }
+
+  .partnerLogos {
+    gap: 18px 24px;
+  }
+
+  .decorativePlane {
+    display: none;
+  }
+
+  .linkColumns {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 34px 20px 24px;
+  }
+
+  .footerBottom {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 12px;
+    padding: 14px 20px 18px;
+    text-align: center;
+  }
+}
