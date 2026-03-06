@@ -1,0 +1,17 @@
+.appLayout {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+}
+
+.appContent {
+  width: min(600px, 100%);
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.appFooter {
+  margin-top: auto;
+}
