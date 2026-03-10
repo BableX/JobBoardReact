@@ -4,6 +4,8 @@ import { db } from "./api/firebaseConfig";
 import JobForm from "./components/JobForm";
 import JobFilter from "./components/JobFilter";
 import JobList from "./components/JobList";
+// Добавляем импорт Hero
+import Hero from "./components/Hero"; 
 
 function App() {
   const [jobs, setJobs] = useState([]);
@@ -12,7 +14,7 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Firestore дан маалымат алуу (реалдуу убакытта)
+  // Firestore дан маалымат алуу
   useEffect(() => {
     const q = query(collection(db, "jobs"), orderBy("createdAt", "desc"));
     
@@ -33,18 +35,13 @@ function App() {
       }
     );
 
-    // Cleanup функциясы
     return () => unsubscribe();
   }, []);
 
   // Фильтрленген вакансиялар
   const filteredJobs = jobs.filter(job => {
-    // Издөө боюнча фильтр
     const matchesSearch = job.title.toLowerCase().includes(search.toLowerCase());
-    
-    // Категория боюнча фильтр
     const matchesCategory = category === "All" || job.category === category;
-    
     return matchesSearch && matchesCategory;
   });
 
@@ -59,10 +56,14 @@ function App() {
       padding: 20,
       fontFamily: "Arial, sans-serif"
     }}>
+      
+      {/* --- HERO SECTION --- */}
+      <Hero />
+
       <h1 style={{ textAlign: "center", color: "#333", marginBottom: 30 }}>
         💼 Вакансиялар тактасы
       </h1>
-
+      
       <JobForm />
       
       <JobFilter 
@@ -73,6 +74,7 @@ function App() {
       />
 
       <div style={{ marginTop: 30 }}>
+        {/* Карточка статистики */}
         <div style={{
           marginBottom: 20,
           padding: "18px 18px 16px",
@@ -89,19 +91,10 @@ function App() {
             gap: 12
           }}>
             <div>
-              <h2 style={{
-                margin: 0,
-                color: "#1c2f44",
-                fontSize: 24,
-                lineHeight: 1.2
-              }}>
+              <h2 style={{ margin: 0, color: "#1c2f44", fontSize: 24, lineHeight: 1.2 }}>
                 Активдүү вакансиялар
               </h2>
-              <p style={{
-                margin: "7px 0 0",
-                color: "#45617f",
-                fontSize: 14
-              }}>
+              <p style={{ margin: "7px 0 0", color: "#45617f", fontSize: 14 }}>
                 Азыр көрүнүп турган позициялар: {filteredJobs.length}
               </p>
             </div>
@@ -122,6 +115,7 @@ function App() {
             </div>
           </div>
 
+          {/* Progress Bar */}
           <div style={{ marginTop: 14 }}>
             <div style={{
               display: "flex",
@@ -157,7 +151,6 @@ function App() {
         />
       </div>
 
-      {/* Стильдер */}
       <style>
         {`
           @keyframes spin {
